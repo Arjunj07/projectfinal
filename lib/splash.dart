@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:devu/loginandsignup/filestorage.dart';
-import 'package:devu/owner/editownerprofile.dart';
-import 'package:devu/user/searchpage.dart';
 import 'package:flutter/material.dart';
 import 'package:devu/loginandsignup/login.dart';
 
@@ -28,22 +26,20 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     super.initState();
     Timer(const Duration(seconds: 5), () {
-      if (finalEmail == null) {
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const LoginScreen()));
-      } else if (finalEmail != null && finalRole.toString() == "USER") {
-        {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => const SearchScreen()));
-        }
-      } else if (finalEmail != null && finalRole.toString() == "OWNER") {
-        {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const ProfileInformation()));
-        }
-      }
+      // if (finalEmail == null) {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const LoginScreen()));
+      // } else if (finalEmail != null && finalRole.toString() == "USER") {
+      //   {
+      //     Navigator.pushReplacement(context,
+      //         MaterialPageRoute(builder: (context) => const SearchScreen()));
+      //   }
+      // } else if (finalEmail != null && finalRole.toString() == "OWNER") {
+      //   {
+      //     Navigator.pushReplacement(context,
+      //         MaterialPageRoute(builder: (context) => const ProfilePage()));
+      //   }
+      // }
     });
   }
 

@@ -1,11 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:devu/firebase/auth_services.dart';
-import 'package:devu/owner/editownerprofile.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-
-import '../loginandsignup/login.dart';
 
 // class ProfileInfo extends StatefulWidget {
 //   const ProfileInfo({super.key});

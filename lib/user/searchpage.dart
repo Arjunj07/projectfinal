@@ -10,8 +10,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
-import 'bookticket.dart';
-
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
 
@@ -56,7 +54,7 @@ class _SearchScreenState extends State<SearchScreen> {
         .doc(FirebaseAuth.instance.currentUser!.uid)
         .get();
     setState(() {
-      image = (snap.data() as Map<String, dynamic>)['stadiumImage'];
+      image = (snap.data() as Map<String, dynamic>)['imageLink'];
       email = (snap.data() as Map<String, dynamic>)['email'];
       name = (snap.data() as Map<String, dynamic>)['username'];
 
@@ -119,6 +117,10 @@ class _SearchScreenState extends State<SearchScreen> {
                     backgroundImage: NetworkImage(image),
                     radius: 36,
                   ),
+                  // Text(
+                  //   name.toUpperCase(),
+                  //   style: const TextStyle(color: Colors.white),
+                  // )
                 ],
               ),
             ),
@@ -253,7 +255,8 @@ class _SearchScreenState extends State<SearchScreen> {
                 itemBuilder: (context, index) {
                   return InkWell(
                       onTap: () {
-                        name = (snapshot.data! as dynamic).docs[index]['Stadium Name'];
+                        name = (snapshot.data! as dynamic).docs[index]
+                            ['Stadium Name'];
                         //superid = (snapshot.data! as dynamic).docs[index]['uid'];
                         // Navigator.of(context).push(
                         //   MaterialPageRoute(
@@ -262,12 +265,14 @@ class _SearchScreenState extends State<SearchScreen> {
                         //             ['Stadium Name']),
                         //   ),
                         // );
-                         Navigator.of(context).push(
+                        Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (ctx) => BookNowPage(
-                                name: (snapshot.data! as dynamic).docs[index]
-                                    ['Stadium Name'],image: (snapshot.data! as dynamic).docs[index]
-                                    ['stadiumImage'],),
+                              name: (snapshot.data! as dynamic).docs[index]
+                                  ['Stadium Name'],
+                              image: (snapshot.data! as dynamic).docs[index]
+                                  ['stadiumImage'],
+                            ),
                           ),
                         );
                       },
@@ -278,10 +283,10 @@ class _SearchScreenState extends State<SearchScreen> {
                                   .docs[index]['Stadium Name']
                                   .toString(),
                               details: (snapshot.data! as dynamic)
-                                  .docs[index]['Rental Charges']
+                                  .docs[index]['Address']
                                   .toString(),
                               image: (snapshot.data! as dynamic).docs[index]
-                                  ['imageLink']),
+                                  ['stadiumImage']),
                           const SizedBox(
                             height: 15,
                           )

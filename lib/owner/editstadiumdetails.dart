@@ -2,7 +2,6 @@ import 'dart:typed_data';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:devu/owner/bookingrequests.dart';
-import 'package:devu/resources/store.dart';
 import 'package:devu/resources/storepic.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -74,8 +73,8 @@ class _ProfileNewInfoState extends State<ProfileNewInfo> {
     });
   }
 
-  void saveprofile() async {
-    String resp = await Storedata().addImage(file: _image!);
+  void saveprofile1() async {
+    String resp = await Storepicdata().addImage(file: _image!);
   }
 
   final storage = FirebaseStorage.instance;
@@ -90,9 +89,9 @@ class _ProfileNewInfoState extends State<ProfileNewInfo> {
     });
   }
 
-  void saveprofile1() async {
-    String resp = await Storepicdata().addImage(file: _image!);
-  }
+  // void saveprofile1() async {
+  //   String resp = await Storepicdata().addImage(file: _image!);
+  // }
 
   final storage1 = FirebaseStorage.instance;
 
@@ -339,7 +338,7 @@ class _ProfileNewInfoState extends State<ProfileNewInfo> {
                         Colors.black), // Set the desired color
                   ),
                   onPressed: () {
-                    saveprofile();
+                    // saveprofile();
                     saveprofile1();
                     FirebaseFirestore.instance
                         .collection('owners')
