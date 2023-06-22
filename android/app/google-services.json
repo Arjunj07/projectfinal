@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "174159436439",
+    "project_id": "arena-a673d",
+    "storage_bucket": "arena-a673d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174159436439:android:389440fd86758dd1f4a7d2",
+        "android_client_info": {
+          "package_name": "com.example.devu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174159436439-pl63gl4dhd8mj1afepa830mh76mptj7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrmhbeQb2ZVsZ2dgO28u2TlFte4UFewW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174159436439-pl63gl4dhd8mj1afepa830mh76mptj7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
